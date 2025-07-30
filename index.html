@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI Fundamentals - Interactive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/black.css" id="theme">
+
+  <style>
+    .quiz-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: 2px solid #00ffcc;
+      background: none;
+      color: #00ffcc;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .quiz-button:hover {
+      background-color: #00ffcc;
+      color: black;
+    }
+
+    .quiz-feedback {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- AI Intro -->
+    <section>
+      <h1>AI Fundamentals</h1>
+      <p>With an Interactive Quiz</p>
+    </section>
+
+    <!-- What is AI -->
+    <section>
+      <h2>What is AI?</h2>
+      <ul>
+        <li>Artificial Intelligence simulates human intelligence using machines.</li>
+        <li>Used in image recognition, language translation, etc.</li>
+      </ul>
+    </section>
+
+    <!-- First Quiz -->
+    <section>
+      <h2>Quiz Time!</h2>
+      <p>Which of the following is an example of AI?</p>
+      <button class="quiz-button" onclick="showFeedback(this, false)">Microwave Oven</button>
+      <button class="quiz-button" onclick="showFeedback(this, true)">ChatGPT</button>
+      <button class="quiz-button" onclick="showFeedback(this, false)">Light Bulb</button>
+      <div class="quiz-feedback" id="quiz1-feedback"></div>
+    </section>
+
+    <!-- Machine Learning -->
+    <section>
+      <h2>Machine Learning</h2>
+      <ul>
+        <li>ML is a subset of AI that learns from data.</li>
+        <li>Types: Supervised, Unsupervised, Reinforcement Learning</li>
+      </ul>
+    </section>
+
+    <!-- Second Quiz -->
+    <section>
+      <h2>Quiz Time!</h2>
+      <p>Which type of learning uses labeled data?</p>
+      <button class="quiz-button" onclick="showFeedback(this, true)">Supervised Learning</button>
+      <button class="quiz-button" onclick="showFeedback(this, false)">Unsupervised Learning</button>
+      <button class="quiz-button" onclick="showFeedback(this, false)">Reinforcement Learning</button>
+      <div class="quiz-feedback" id="quiz2-feedback"></div>
+    </section>
+
+    <!-- Ethics -->
+    <section>
+      <h2>AI Ethics</h2>
+      <ul>
+        <li>Bias in datasets</li>
+        <li>Privacy concerns</li>
+        <li>Accountability & transparency</li>
+      </ul>
+    </section>
+
+    <!-- Final Slide -->
+    <section>
+      <h2>Thanks!</h2>
+      <p>Hope you learned something new.</p>
+    </section>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+<script>
+  Reveal.initialize();
+
+  function showFeedback(button, isCorrect) {
+    const section = button.closest('section');
+    const feedback = section.querySelector('.quiz-feedback');
+    feedback.textContent = isCorrect ? "✅ Correct!" : "❌ Try again!";
+  }
+</script>
+
+</body>
+</html>
